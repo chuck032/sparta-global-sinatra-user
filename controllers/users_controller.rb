@@ -1,4 +1,4 @@
-class PostsController < Sinatra::Base
+class UsersController < Sinatra::Base
 
   set :root, File.join(File.dirname(__FILE__), '..')
 
@@ -34,7 +34,7 @@ class PostsController < Sinatra::Base
   get "/" do
     @title = "Users"
     @users = $users
-    erb :"posts/index"
+    erb :"users/index"
   end
 
   #NEW
@@ -46,7 +46,7 @@ class PostsController < Sinatra::Base
   get "/:id" do
     id = params[:id].to_i
     @users = $users[id]
-    erb :"posts/show"
+    erb :"users/show"
   end
 
   #EDIT
